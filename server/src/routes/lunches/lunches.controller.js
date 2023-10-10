@@ -1,9 +1,9 @@
-const {lunches}= require('../../models/lunches.model');
+const {getAllLunches}= require('../../models/lunches.model');
 
-function getAllLunches(req,res){
-    res.status(200).json(Array.from(lunches.values()));
+function httpGetAllLunches(req,res){
+    res.status(200).json(getAllLunches());
 }
 
 module.exports={
-    getAllLunches,
+    httpGetAllLunches,
 }

@@ -14,6 +14,10 @@ const lunch= {
 
 lunches.set(lunch.FlightNumber, lunch);
 
+function getAllLunches(){
+    return Array.from(lunches.values());
+}
+
 module.exports={
-    lunches,
+    getAllLunches,
 }
