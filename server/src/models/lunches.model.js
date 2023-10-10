@@ -5,9 +5,9 @@ const lunch= {
     mission: 'Kepler Exploration',
     rocket: 'kepler E1',
     launchDate: new Date('01/12/2024'),
-    destinaiton: 'kepler-200 b',
-    destinaiton: ['echouroq','djazairia'],
-    upconming: true,
+    destination: 'kepler-200 b',
+    customer: ['echouroq','djazairia'],
+    upcoming: true,
     success: true,
 
 }
