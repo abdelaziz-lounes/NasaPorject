@@ -1,8 +1,9 @@
 const express= require('express');
-const {httpGetAllLunches,}= require('./lunches.controller');
+const {httpGetAllLaunches,httpAddNewLaunch}= require('./lunches.controller');
 
-const lunchesRouter= express.Router();
+const launchesRouter= express.Router();
 
-lunchesRouter.get('/lunches',httpGetAllLunches);
+launchesRouter.get('/',httpGetAllLaunches);
+launchesRouter.post('/',httpAddNewLaunch);
 
-module.exports= lunchesRouter;
+module.exports= launchesRouter;
