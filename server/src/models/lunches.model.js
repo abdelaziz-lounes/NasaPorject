@@ -24,7 +24,7 @@ function addNewLunch(lunch){
     latestFlightNumber++;
     lunches.set(latestFlightNumber, Object.assign(lunch, {
         FlightNumber: latestFlightNumber,
-        customer: ['AAF','Djazairaia'],
+        customer: ['AAF','Djazairia'],
         upcoming: true,
         success: true,
     }));
