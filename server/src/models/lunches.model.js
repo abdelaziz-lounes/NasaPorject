@@ -30,7 +30,12 @@ function addNewLaunch(launch){
     }));
 }
 
+function deleteLaunch(){
+
+}
+
 module.exports={
     getAllLaunches,
     addNewLaunch,
+    deleteLaunch,
 }

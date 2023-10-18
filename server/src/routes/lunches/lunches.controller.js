@@ -21,11 +21,22 @@ function httpAddNewLaunch(req,res){
     }
 
     addNewLaunch(launch);
-
     res.status(201).json(launch);
 }
+
+function httpDeleteLaunch(){
+    if(!existLaunchWithId(launchId)){
+        return res.status(404).json({
+            error: 'launch not found'
+        })
+    }
+}
+
+
 
 module.exports={
     httpGetAllLaunches,
     httpAddNewLaunch,
+    httpDeleteLaunch,
+    
 }
