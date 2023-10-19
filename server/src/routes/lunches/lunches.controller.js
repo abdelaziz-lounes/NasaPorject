@@ -1,4 +1,4 @@
-const {getAllLaunches,addNewLaunch}= require('../../models/lunches.model');
+const {getAllLaunches,addNewLaunch,existLaunchWithId,deleteLaunch}= require('../../models/lunches.model');
 
 function httpGetAllLaunches(req,res){
     res.status(200).json(getAllLaunches());
@@ -30,6 +30,7 @@ function httpDeleteLaunch(){
             error: 'launch not found'
         })
     }
+    
 }
 
 
