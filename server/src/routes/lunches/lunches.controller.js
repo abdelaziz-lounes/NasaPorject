@@ -1,10 +1,11 @@
-const {getAllLaunches,addNewLaunch,existLaunchWithId,deleteLaunch}= require('../../models/lunches.model');
+const {getAllLaunches,addNewLaunch,existLaunchWithId,deleteLaunchById}= require('../../models/lunches.model');
 
 function httpGetAllLaunches(req,res){
     res.status(200).json(getAllLaunches());
 }
 
 function httpAddNewLaunch(req,res){
+
     const launch= req.body;
     launch.launchDate = new Date(launch.launchDate)
 
@@ -24,13 +25,19 @@ function httpAddNewLaunch(req,res){
     res.status(201).json(launch);
 }
 
-function httpDeleteLaunch(){
+function httpDeleteLaunch(req,res){
+    // console.log(req);
+    const launchId= Number(req.params.id);    
+    console.log(launchId);
     if(!existLaunchWithId(launchId)){
         return res.status(404).json({
             error: 'launch not found'
         })
     }
-    
+
+    const aborted= deleteLaunchById(launchId);
+    res.status(200).json(aborted);
+
 }
 
 
